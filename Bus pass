@@ -1,0 +1,38 @@
+print("=== Bus Pass Booking System ===")
+
+bookings = []
+
+while True:
+    print("\n1. Book Ticket")
+    print("2. View Bookings")
+    print("3. Exit")
+
+    choice = input("Enter Choice: ")
+
+    if choice == "1":
+        name = input("Enter Passenger Name: ")
+        source = input("From: ")
+        destination = input("To: ")
+
+        bookings.append({
+            "name": name,
+            "source": source,
+            "destination": destination
+        })
+
+        print("Ticket Booked Successfully!")
+
+    elif choice == "2":
+        print("\nBooked Tickets:")
+        for i, ticket in enumerate(bookings, start=1):
+            print(f"\nTicket {i}")
+            print("Passenger:", ticket["name"])
+            print("From:", ticket["source"])
+            print("To:", ticket["destination"])
+
+    elif choice == "3":
+        print("Thank You!")
+        break
+
+    else:
+        print("Invalid Choice!")
